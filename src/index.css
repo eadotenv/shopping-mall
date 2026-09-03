@@ -1,0 +1,28 @@
+:root {
+  --ink: #0f0f0f;
+  --ink2: #3a3a3a;
+  --ink3: #f5f5f5;
+  --ink4: #ddd;
+  --ink5: #ccc;
+  --ink6: #f0f0f0;
+  --ink7: #666;
+  --ink8: #888;
+  --border: #0066ff;
+  --card-border: #ffd699;
+  --saved-btn: #00c896;
+  --card-bg: #fff4e6;
+  --btn-bg: #dcfce7;
+  --btn-text: #16a34a;
+  --surface: white;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background: var(--ink3);
+}
