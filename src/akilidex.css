@@ -19,23 +19,6 @@
   color: var(ink2);
 }
 
-.navbar-links {
-  display: flex;
-  list-style: none;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar-links a {
-  text-decoration: none;
-  color: var(--ink7);
-}
-
-.navbar-links a:hover {
-  color: var(--ink2);
-}
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -174,27 +157,4 @@
   border-top: 1px solid var(--ink4);
   color: var(--ink7);
   font-size: 14px;
-}
-
-.home-page,
-.about-page,
-.contact-page {
-  text-align: center;
-  padding: 40px 20px;
-}
-
-.home-page h2,
-.about-page h2,
-.contact-page h2 {
-  font-size: 28px;
-  margin-bottom: 15px;
-  color: var(--ink2);
-}
-
-.home-page p,
-.about-page p,
-.contact-page p {
-  font-size: 16px;
-  color: var(--ink7);
-  margin: 8px 0;
 }

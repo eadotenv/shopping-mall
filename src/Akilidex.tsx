@@ -13,7 +13,7 @@ import maltImg from "./assets/malt.jpg";
 import digestiveImg from "./assets/digestive.jpg";
 import shitoImg from "./assets/shito.jpg";
 import canationImg from "./assets/canation.jpg";
-import chocoImg from "./assets/chocolate.jpg";
+import chocoImg from "./assets/choco.jpg";
 import kalyImg from "./assets/Kalyppo.jpg";
 
 interface Groceries {
@@ -137,7 +137,6 @@ function Akilidex() {
   const [saved, setSaved] = useState<Record<number, boolean>>({});
   const [sortBy, setSortBy] = useState<string>("default");
   const [searchLocation, setSearchLocation] = useState<string>("");
-  const [currentPage, setCurrentPage] = useState<string>("home");
 
   const toggleSave = (id: number) => {
     setSaved((prev) => ({ ...prev, [id]: !prev[id] }));
@@ -153,149 +152,68 @@ function Akilidex() {
       return a.id - b.id;
     });
 
-  const renderPage = () => {
-    switch (currentPage) {
-      case "home":
-        return (
-          <div className="home-page">
-            <h2>Welcome to Akilidex</h2>
-            <p>Your one-stop shop for quality provisions across Ghana</p>
-          </div>
-        );
-      case "products":
-        return (
-          <>
-            <header className="header">
-              <div className="search-container">
-                <label htmlFor="location-search">Location</label>
-                <input
-                  id="location-search"
-                  type="text"
-                  placeholder="Search by location..."
-                  value={searchLocation}
-                  onChange={(e) => setSearchLocation(e.target.value)}
-                  className="search-input"
-                />
-              </div>
-              <div className="sort-container">
-                <label htmlFor="sort-select">Sort by price</label>
-                <select
-                  id="sort-select"
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value)}
-                  className="sort-select"
-                >
-                  <option value="default">Default</option>
-                  <option value="low">Low to High</option>
-                  <option value="high">High to Low</option>
-                </select>
-              </div>
-            </header>
-            <div className="grid">
-              {filteredAndSortedGroceries.map((grocery) => (
-                <div key={grocery.id} className="card">
-                  <div className="card-image">
-                    <img src={grocery.image} alt={grocery.name} />
-                  </div>
-                  <div className="card-body">
-                    <h2 className="card-title">{grocery.name}</h2>
-                    <p className="card-location">{grocery.location}</p>
-                    <div className="card-footer">
-                      <span className="card-price">
-                        GH₵{grocery.price.toLocaleString()}
-                      </span>
-                      <button
-                        className={`save-btn ${saved[grocery.id] ? "saved" : ""}`}
-                        onClick={() => toggleSave(grocery.id)}
-                      >
-                        {saved[grocery.id] ? "Saved" : "Save"}
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </>
-        );
-      case "about":
-        return (
-          <div className="about-page">
-            <h2>About Akilidex</h2>
-            <p>
-              We connect customers with quality provisions from across Ghana.
-            </p>
-          </div>
-        );
-      case "contact":
-        return (
-          <div className="contact-page">
-            <h2>Contact Us</h2>
-            <p>Email: info@akilidex.com</p>
-            <p>Phone: +233 XX XXX XXXX</p>
-          </div>
-        );
-      default:
-        return null;
-    }
-  };
-
   return (
     <div className="app">
       <nav className="navbar">
         <div className="navbar-brand">Akilidex</div>
-        <ul className="navbar-links">
-          <li>
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                setCurrentPage("home");
-              }}
-            >
-              Home
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                setCurrentPage("products");
-              }}
-            >
-              Products
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                setCurrentPage("about");
-              }}
-            >
-              About
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                setCurrentPage("contact");
-              }}
-            >
-              Contact
-            </a>
-          </li>
-        </ul>
       </nav>
-      {renderPage()}
+      <header className="header">
+        <div className="search-container">
+          <label htmlFor="location-search">Location</label>
+          <input
+            id="location-search"
+            type="text"
+            placeholder="Search by location..."
+            value={searchLocation}
+            onChange={(e) => setSearchLocation(e.target.value)}
+            className="search-input"
+          />
+        </div>
+        <div className="sort-container">
+          <label htmlFor="sort-select">Sort by price</label>
+          <select
+            id="sort-select"
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value)}
+            className="sort-select"
+          >
+            <option value="default">Default</option>
+            <option value="low">Low to High</option>
+            <option value="high">High to Low</option>
+          </select>
+        </div>
+      </header>
+      <div className="grid">
+        {filteredAndSortedGroceries.map((grocery) => (
+          <div key={grocery.id} className="card">
+            <div className="card-image">
+              <img src={grocery.image} alt={grocery.name} />
+            </div>
+            <div className="card-body">
+              <h2 className="card-title">{grocery.name}</h2>
+              <p className="card-location">{grocery.location}</p>
+              <div className="card-footer">
+                <span className="card-price">
+                  GH₵{grocery.price.toLocaleString()}
+                </span>
+                <button
+                  className={`save-btn ${saved[grocery.id] ? "saved" : ""}`}
+                  onClick={() => toggleSave(grocery.id)}
+                >
+                  {saved[grocery.id] ? "Saved" : "Save"}
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
       <footer className="footer">
         <p>&copy; 2026 Eben. All rights reserved.</p>
       </footer>
     </div>
   );
 }
+
+// Your one-stop shop for quality provisions across Ghana. We connect customers with quality provisions from across Ghana.
 
 export default Akilidex;
