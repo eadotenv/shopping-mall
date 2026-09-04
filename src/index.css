@@ -33,9 +33,3 @@ body {
   font-family: sans-serif;
   background: var(--surface);
 }
-
-#root {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
