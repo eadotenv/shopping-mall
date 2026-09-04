@@ -28,10 +28,3 @@ dist-ssr
 *.sln
 *.sw?
 
-# OS
-Thumbs.db
-Desktop.ini
-
-# Build
-build
-.cache
