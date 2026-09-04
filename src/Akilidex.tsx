@@ -43,17 +43,16 @@ function Akilidex() {
           </ul>
           <div className="navbar-right">
             <div className="navbar-icons">
-              <button className="icon-btn" aria-label="Cart">
+              <button className="icon-btn">
                 <FiShoppingCart size={20} />
               </button>
-              <button className="icon-btn" aria-label="Account">
+              <button className="icon-btn">
                 <FiUser size={20} />
               </button>
             </div>
             <button
               className="hamburger-btn"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
             </button>
@@ -105,7 +104,7 @@ function Akilidex() {
                 <p className="card-location">{grocery.location}</p>
                 <div className="card-footer">
                   <span className="card-price">
-                    GH₵{grocery.price.toFixed(2)}
+                    GH₵ {grocery.price.toFixed(2)}
                   </span>
                   <button
                     className={`save-btn ${saved[grocery.id] ? "saved" : ""}`}
@@ -120,8 +119,11 @@ function Akilidex() {
         </div>
       </div>
       <footer className="footer">
-        <p>Your one-stop shop for quality provisions across Ghana. We connect customers with quality provisions from across Ghana.</p>
-        <p>&copy; 2026 Eben. All rights reserved.</p>
+        <p>
+          Your one-stop shop for quality provisions across Ghana. We connect
+          customers with quality provisions from across Ghana.
+        </p>
+        <p>&copy; 2026 Akilidex. All rights reserved.</p>
       </footer>
     </>
   );

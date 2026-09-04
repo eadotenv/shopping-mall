@@ -1,6 +1,8 @@
 .app {
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
+  flex: 1;
 }
 
 .navbar {
@@ -55,6 +57,7 @@
   font-size: 20px;
   font-weight: bold;
   color: var(--ink2);
+  font-family: var(--font-normal);
 }
 
 .navbar-links {
@@ -139,6 +142,7 @@
   width: 100%;
   outline: none;
   color: var(--ink2);
+  font-family: var(--font-location);
 }
 
 .search-input::placeholder {
@@ -169,6 +173,8 @@
   font-size: 16px;
   cursor: pointer;
   background: var(--surface);
+  font-family: var(--font-normal);
+  
 }
 
 .sort-select:hover {
@@ -254,7 +260,7 @@
 
   .sort-select {
     width: 100%;
-  }
+    
 
   .grid {
     grid-template-columns: 1fr;
@@ -282,12 +288,14 @@
 .card-title {
   font-size: 18px;
   margin: 0 0 8px 0;
+  font-family: var(--font-inter);
 }
 
 .card-location {
   color: var(--ink2);
   margin: 0 0 12px 0;
   font-size: 14px;
+  font-family: var(--font-location);
 }
 
 .card-footer {
@@ -300,6 +308,7 @@
   font-size: 18px;
   font-weight: bold;
   color: var(--ink);
+  font-family: var(--font-display);
 }
 
 .save-btn {
@@ -308,6 +317,7 @@
   border-radius: 16px;
   background: var(--surface);
   cursor: pointer;
+  font-family: var(--font-display);
 }
 
 .save-btn:hover {
@@ -320,15 +330,12 @@
   color: var(--btn-text);
 }
 
-/* #86efac */
-
 .footer {
   text-align: center;
   padding: 20px;
   background: var(--ink);
   color: var(--surface);
   font-size: 14px;
-  position: sticky;
-  bottom: 0;
-  z-index: 100;
+  width: 100%;
+  font-family: var(--font-normal);
 }

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400&family=Roboto:ital,wght@0,100..900;1,100..900&family=Syne:wght@400..800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap");
 :root {
   --ink: #0f0f0f;
   --ink2: #3a3a3a;
@@ -16,6 +17,10 @@
   --surface: #fff;
   --card: #fafaf8;
   --input-bg: #f5f5f5;
+  --font-normal: "Roboto", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --font-location: "Inter", sans-serif;
 }
 
 * {
@@ -27,4 +32,10 @@
 body {
   font-family: sans-serif;
   background: var(--surface);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
