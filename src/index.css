@@ -13,7 +13,9 @@
   --card-bg: #fff4e6;
   --btn-bg: #dcfce7;
   --btn-text: #16a34a;
-  --surface: white;
+  --surface: #fff;
+  --card: #fafaf8;
+  --input-bg: #f5f5f5;
 }
 
 * {
@@ -24,5 +26,5 @@
 
 body {
   font-family: sans-serif;
-  background: var(--ink3);
+  background: var(--surface);
 }
